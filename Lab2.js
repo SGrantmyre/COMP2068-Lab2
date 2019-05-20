@@ -1,5 +1,8 @@
+//init variables to be used in functions
 var response = "";
 var result;
+
+//functions to perform operations
 const add = (x, y) => {
     result = x+y;
     response = `${x} + ${y} = ${result}`;
@@ -18,7 +21,7 @@ const divide = (x, y) => {
 };
 
 
-
+//function to calculate from url
 const calculation = (req, res) => {
     const query = req.query;
     const x = parseInt(query.x);
@@ -43,7 +46,7 @@ const calculation = (req, res) => {
             break;
     }
     
-
+    //send result to page
     res.send(response);
 };
 module.exports = calculation;
